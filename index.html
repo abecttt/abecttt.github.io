@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday, Honey WOOOOHOOOOO</title>
+    <title>Happy Birthday, Claire 🎂</title>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -95,22 +95,60 @@
             margin-bottom: 2rem;
         }
 
-        .image-container {
+        /* Slideshow container */
+        .slideshow-container {
+            position: relative;
             margin: 2rem 0;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-height: 400px;
         }
 
-        .image-container img {
+        .slide {
+            display: none;
+            width: 100%;
+            animation: fadeSlide 1s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .slide img {
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.3s ease;
         }
 
-        .image-container img:hover {
-            transform: scale(1.05);
+        /* Slideshow dots */
+        .dots-container {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #ffb8cc;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #ff6b9d;
         }
 
         .links {
@@ -160,12 +198,30 @@
 </head>
 <body>
     <div class="container">
-        <p class="subtitle">Happy Birthday Stinky</p>
-        <h1>i love you i love you i love youu</h1>
+        <p class="subtitle">Happy Birthday Claire ❤️</p>
+        <h1>Happy Birthday, Claire 🎂</h1>
         <p class="message">to my goober 🤍</p>
         
-        <div class="image-container">
-            <img src="images/claire1.jpg" alt="Claire">
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="images/claire1.jpg" alt="Claire">
+            </div>
+            <div class="slide">
+                <img src="images/claire2.jpg" alt="Claire">
+            </div>
+            <div class="slide">
+                <img src="images/claire3.jpg" alt="Claire">
+            </div>
+            <div class="slide">
+                <img src="images/claire4.jpg" alt="Claire">
+            </div>
+        </div>
+
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
         </div>
 
         <div class="links">
@@ -175,6 +231,41 @@
     </div>
 
     <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        let autoSlideTimer;
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            
+            slides[slideIndex - 1].classList.add("active");
+            dots[slideIndex - 1].classList.add("active");
+            
+            autoSlideTimer = setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function currentSlide(n) {
+            clearTimeout(autoSlideTimer);
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        // Start slideshow
+        showSlides();
+
         // Create floating hearts
         function createHeart() {
             const heart = document.createElement('div');
