@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Love You ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe8f0 50%, #fff5f9 100%);
+            min-height: 100vh;
+            padding: 3rem 1rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            opacity: 0;
+            animation: float-up 8s ease-in infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes float-up {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            color: #d84b7c;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #ff69b4;
+            font-style: italic;
+        }
+
+        .reasons-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .reason-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+            transition: all 0.3s ease;
+            animation: slideIn 0.6s ease-out backwards;
+        }
+
+        .reason-card:nth-child(1) { animation-delay: 0.1s; }
+        .reason-card:nth-child(2) { animation-delay: 0.2s; }
+        .reason-card:nth-child(3) { animation-delay: 0.3s; }
+        .reason-card:nth-child(4) { animation-delay: 0.4s; }
+        .reason-card:nth-child(5) { animation-delay: 0.5s; }
+        .reason-card:nth-child(6) { animation-delay: 0.6s; }
+        .reason-card:nth-child(7) { animation-delay: 0.7s; }
+        .reason-card:nth-child(8) { animation-delay: 0.8s; }
+        .reason-card:nth-child(9) { animation-delay: 0.9s; }
+        .reason-card:nth-child(10) { animation-delay: 1s; }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reason-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(255, 182, 193, 0.3);
+        }
+
+        .reason-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .reason-title {
+            font-size: 1.4rem;
+            color: #d84b7c;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .reason-text {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .back-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+            margin: 0 auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .reason-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Why I Love You 💕</h1>
+            <p class="subtitle">Just a few of the infinite reasons...</p>
+        </div>
+
+        <div class="reasons-grid">
+            <div class="reason-card">
+                <div class="reason-emoji">✨</div>
+                <div class="reason-title">Your Efforts & How You Show Love</div>
+                <div class="reason-text">The thoughtful ways you show you care never go unnoticed. Every little thing you do to make me happy means the world to me.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">🌙</div>
+                <div class="reason-title">Your Sleepy Voice</div>
+                <div class="reason-text">When you're sleepy, your voice gets so soft and sweet. It's the most adorable thing in the world and makes my heart melt every time.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">🥰</div>
+                <div class="reason-title">How Adorable You Are</div>
+                <div class="reason-text">Everything you do is endearing. Your expressions, your mannerisms, the way you react to things—you're impossibly cute in every way.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">💪</div>
+                <div class="reason-title">Your Dedication</div>
+                <div class="reason-text">When you commit to something, you give it your all. Your determination and perseverance inspire me every single day.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">🏡</div>
+                <div class="reason-title">How Easy It Is To Be Myself</div>
+                <div class="reason-text">With you, I never have to pretend or hide. You make me feel safe, accepted, and loved exactly as I am. That's a rare and beautiful gift.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">😊</div>
+                <div class="reason-title">Your Smile</div>
+                <div class="reason-text">Your smile lights up my entire world. When you're happy, I'm happy. It's contagious and it's one of my favorite things about you.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">💭</div>
+                <div class="reason-title">The Way You Understand Me</div>
+                <div class="reason-text">You just get me in a way no one else does. You understand my silence, my thoughts, and what I need without me even having to say it.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">🌟</div>
+                <div class="reason-title">Your Kindness</div>
+                <div class="reason-text">You have the most beautiful heart. The way you treat people, the compassion you show—it makes me fall for you more every day.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">😂</div>
+                <div class="reason-title">How You Make Me Laugh</div>
+                <div class="reason-text">Whether you mean to or not, you always know how to make me laugh. Our inside jokes and silly moments together are some of my favorite memories.</div>
+            </div>
+
+            <div class="reason-card">
+                <div class="reason-emoji">❤️</div>
+                <div class="reason-title">Simply Being You</div>
+                <div class="reason-text">At the end of the day, I love you just for being you. Every quirk, every flaw, every perfect imperfection. You're my person, and I wouldn't change a thing.</div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        // Create hearts periodically
+        setInterval(createHeart, 800);
+        
+        // Create initial batch
+        for (let i = 0; i < 5; i++) {
+            setTimeout(createHeart, i * 200);
+        }
+    </script>
+</body>
+</html>
